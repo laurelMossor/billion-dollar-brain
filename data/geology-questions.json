@@ -1,0 +1,30 @@
+{
+    "questions": [
+        {
+            "question": "What is the hardest mineral known on Earth?",
+            "right_answer": "Diamond",
+            "alternative_answers": [
+            {
+            "alternative_answer": "Corundum"
+            }
+            ],
+            "why_right_answer": "On the Mohs scale of mineral hardness, which measures scratch resistance, diamond rates the highest at 10. Corundum, which includes variants like ruby and sapphire, is the second hardest mineral with a rating of 9."
+            },
+            {
+            "question": "What is the process by which rocks are broken down at the Earth's surface?",
+            "right_answer": "Weathering",
+            "alternative_answers": [
+            {
+            "alternative_answer": "Erosion"
+            }
+            ],
+            "why_right_answer": "While both weathering and erosion involve the breakdown or displacement of rocks, weathering refers specifically to the in-place disintegration of rocks at the Earth's surface primarily through the actions of wind, water, and temperature changes."
+            },
+            {
+            "question": "What type of rock is created by the solidification of lava or magma?",
+            "right_answer": "Igneous rock",
+            "alternative_answers": [],
+            "why_right_answer": "Igneous rock is formed through the cooling and solidification of magma or lava. There are no alternative correct answers for this question."
+            }
+    ]
+}
