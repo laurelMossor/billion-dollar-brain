@@ -1,0 +1,34 @@
+{
+    "questions": [
+        {
+            "question": "What is the most venomous spider in the world?",
+            "right_answer": "Sydney Funnel-Web Spider",
+            "alternative_answers": [
+            {
+            "alternative_answer": "Brazilian Wandering Spider"
+            }
+            ],
+            "why_right_answer": "Although both the Sydney Funnel-Web Spider and the Brazilian Wandering Spider are highly venomous, the Sydney Funnel-Web Spider's venom is considered to be the most toxic to humans. However, antivenom is available for both species, making fatalities rare."
+            },
+            {
+            "question": "Which insect is known for its ability to produce light?",
+            "right_answer": "Firefly",
+            "alternative_answers": [
+            {
+            "alternative_answer": "Glowworm"
+            }
+            ],
+            "why_right_answer": "Both fireflies and glowworms are capable of bioluminescence. However, fireflies are more universally recognized for this ability due to their widespread distribution and common appearances in culture and media."
+            },
+            {
+            "question": "What is the longest insect in the world?",
+            "right_answer": "Chan's Megastick",
+            "alternative_answers": [
+            {
+            "alternative_answer": "Giant Stick Insect"
+            }
+            ],
+            "why_right_answer": "While the Giant Stick Insect is indeed large, Chan's Megastick holds the record for the world's longest insect. It can reach a length of over 56 cm (22 in) when its legs are fully extended."
+            }
+    ]
+}

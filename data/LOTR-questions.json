@@ -1,0 +1,30 @@
+{
+    "questions": [
+        {
+            "question": "Who were the bearers of the three Elven rings of power in 'The Lord of the Rings'?",
+            "right_answer": "Gandalf, Galadriel, Elrond",
+            "alternative_answers": [
+            {
+            "alternative_answer": "Gandalf, Galadriel, Cirdan"
+            }
+            ],
+            "why_right_answer": "Gandalf, Galadriel, and Elrond are indeed the ring bearers during the time of the 'The Lord of the Rings' trilogy. However, the ring Narya was initially given to Cirdan the Shipwright before he later passed it to Gandalf."
+            },
+            {
+            "question": "What is the name of the creature that guards the gates of Moria?",
+            "right_answer": "The Watcher in the Water",
+            "alternative_answers": [
+            {
+            "alternative_answer": "Balrog"
+            }
+            ],
+            "why_right_answer": "While the Balrog is a formidable creature found within the Mines of Moria, the creature that guards the entrance to Moria is the Watcher in the Water."
+            },
+            {
+            "question": "Who forged the One Ring?",
+            "right_answer": "Sauron",
+            "alternative_answers": [],
+            "why_right_answer": "Sauron, the main antagonist in 'The Lord of the Rings', is the sole creator of the One Ring. There are no alternative correct answers for this question."
+            }
+    ]
+}
