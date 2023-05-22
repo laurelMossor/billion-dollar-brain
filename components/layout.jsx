@@ -6,7 +6,7 @@ const Layout = ({children}) => {
             <Head>
                 <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
             </Head>
-            <main>
+            <main className="pa4">
                 {children}
             </main>
         </div>

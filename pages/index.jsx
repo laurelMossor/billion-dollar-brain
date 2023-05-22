@@ -9,14 +9,16 @@ export default function Home() {
     return (
         <div>
             <Head>
-                <title>Title</title>
+                <title>Home</title>
             </Head>
-            <div className="bg-red">
-                Hello
+            <div className="">
+                Welcome to the Billion Dollar Brain! 
             </div>
-            <button onClick={handleClick}>
-                Play
-            </button>
+            <div className="pt6">
+                <button onClick={handleClick}>
+                    Play
+                </button>
+            </div>
         </div>
     )
 }
