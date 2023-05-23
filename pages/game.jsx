@@ -1,7 +1,8 @@
 import  { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import NameTag from '../components/name-tag'
 import SpeechBox from '../components/speech-box'
+import PlayerDeck from '../components/player-response-deck'
 
 export default function Game() {
     const router = useRouter()
@@ -10,7 +11,10 @@ export default function Game() {
     }
     const [userAnswer, setUserAnswer] = useState("")
     const [result, setResult] = useState()
+    const sliderElem = document.getElementById("slider")
+    console.log(sliderElem)
 
+    // TODO: Bring this out of this file
     async function onAnswerSubmit(event) {
         event.preventDefault()
         try {
@@ -19,7 +23,7 @@ export default function Game() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ response: userAnswer})
+                body: JSON.stringify({ answer: userAnswer})
             })
 
             const data = await response.json()
@@ -33,7 +37,6 @@ export default function Game() {
             alert(error.message)
         }
     }
-
     return (
         <div>
             <NameTag>Alloy Jones</NameTag>
@@ -41,23 +44,26 @@ export default function Game() {
                 Hello everyone! Welcome to The Billion Dollar Brain. Are you ready to get started?
             </SpeechBox>
             <NameTag>Player</NameTag>
-            <div>
-                <form onSubmit={onAnswerSubmit}>
-                    <input 
-                        disabled={false}
-                        type="text"
-                        name="user-answers"
-                        placeholder="Enter your answers"
+            {/* <div>
+                <Slider settings={...settings}>
+                    {/* <AnswerForm 
+                        textKey={'t1'}
+                        submitKey={'s1'}
+                        onSubmit={onAnswerSubmit}
                         value={userAnswer}
                         onChange={e => setUserAnswer(e.target.value)}
-                    />
-                    <input 
-                        disabled={false}
-                        type="submit" 
-                        value="Submit answers"
-                    />
-                </form>
-            </div>
+                    ></AnswerForm> */}
+                    {/* <div><h1>2</h1></div>
+                    <div><h1>3</h1></div>
+
+                    <div><h1>4</h1></div> */}
+                {/* </Slider> */}
+            {/* </div> */}
+            <PlayerDeck 
+                onSubmit={onAnswerSubmit}
+                value={userAnswer}
+                onChange={e => setUserAnswer(e.target.value)}
+            />
             <div className="pt6">
                 <button 
                     onClick={handleHomeClick}>
