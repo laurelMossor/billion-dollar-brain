@@ -1,3 +1,5 @@
+//example onChange e => setUserAnswer(e.target.value)
+
 const AnswerForm = ({ onSubmit, value, onChange, submitKey, textKey }) => {
     return (
         <div>

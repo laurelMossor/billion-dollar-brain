@@ -1,6 +1,6 @@
 import Typewriter from 'typewriter-effect'
 
-const SpeechBox = ({children}) => {
+const SpeechBox = ({children, callFunction}) => {
 
     return (
         <div className="ba w-70 vh-25">
@@ -14,7 +14,7 @@ const SpeechBox = ({children}) => {
                     }}
                     onInit={(typewriter) => {
                         typewriter
-                        .callFunction(() => console.log("all done"))
+                        .callFunction(callFunction)
                     }}
                 />
                 

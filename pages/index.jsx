@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import RouterButton from '../components/router-button'
 import  { useRouter } from 'next/router'
 
 export default function Home() {
@@ -14,11 +15,7 @@ export default function Home() {
             <div className="">
                 Welcome to the Billion Dollar Brain! 
             </div>
-            <div className="pt6">
-                <button onClick={handleClick}>
-                    Play
-                </button>
-            </div>
+            <RouterButton location={'/game'}>Play</RouterButton>
         </div>
     )
 }
