@@ -6,15 +6,6 @@ import { create } from 'zustand'
 //     removeAllBears: () => set({ bears: 0 }),
 //   }))
 
-function createQuestionState(gamePlace, hostText) {
-    return {
-        gamePlace: place,
-        hostText: hostText,
-        textCompleted: false,
-        isAnswered: false,
-    }
-}
-
 export const useStore = create(set => ({
     intro: {
         gamePlace: "intro",
@@ -29,11 +20,17 @@ export const useStore = create(set => ({
         textCompleted: false, 
         isAnswered: false
     },
-    updateTextCompleted: (gamePlace) => 
-        set((state) => 
+    updateTextCompleted: (gamePlace) => set((state) => 
             ({ 
                 ...state, 
-                [gamePlace]: {...state[gamePlace], textCompleted: true}}))
+                [gamePlace]: {...state[gamePlace], textCompleted: true}
+            })),
+    updateIsAnswered: (gamePlace) => set((state) => 
+    ({
+        ...state, 
+        [gamePlace]: {...state[gamePlace], 
+        isAnswered: true}
+    }))
 }))
 
 // export const useStore = create(set => {
