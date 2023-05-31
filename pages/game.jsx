@@ -18,17 +18,33 @@ import { useStore } from '../utils/useStore'
     // func to evaluate which question to ask, and when to move to new q
         // looks at textComplete and isAnswered to update state
     // func to update games State
-    
+    const GAME_STATES = {
+        intro: 'intro',
+
+    }
+
 export default function Game() {
-    const gameStates = useStore((state) => state.gameStates)
-    // const gamePlace = useStore((state) => )
-    const [gamePlace, setGamePlace] = useState(gameStates.intro)
+    // const [gameStates, setGameStates] = useState(useStore((state) => state.gameStates))
+    const getGameStates = () => useStore((state) => state)
+    const gameStates = getGameStates()
+    // export const inc = () => 
+        // useBoundStore.setState((state) => ({ count: state.count + 1 }))
+
+    const [gamePlace, setGamePlace] = useState('intro')
+    const [gameState, setGameState] = useState(gameStates.intro)
     const [userAnswer, setUserAnswer] = useState("")
     const [result, setResult] = useState()
-
     console.log({gameStates})
-    // const [hostState, setHostState] = useState(gamePlace)
-
+    console.log({gameState})
+    console.log({gamePlace})
+    const updateTextCompleted = (place) => {
+        useStore.setState((state, place) => 
+            ({...state, 
+                place: { ...state.place, textCompleted: true }
+            })
+        )
+        setGameState(gameStates.place)
+    }
     const onAnswerSubmit = (event) => {
         event.preventDefault()
         callOpenAI(userAnswer)
@@ -37,12 +53,13 @@ export default function Game() {
     return (
         <div>
             <NameTag>Alloy Jones</NameTag>
-            <SpeechBox callFunction={() => console.log('done')}>
-                {gamePlace && gamePlace.hostText}
+            <SpeechBox callFunction={() => updateTextCompleted(intro)}>
+                {gameState && gameState.hostText}
             </SpeechBox>
             <NameTag>Player</NameTag>
             <div name="answer-box" className="ba vh-25 w-70">
             </div>
+            <button onClick={() => console.log(gameStates)}>State?</button>
             <RouterButton location={'/'}>Home</RouterButton>
         </div>
     )
