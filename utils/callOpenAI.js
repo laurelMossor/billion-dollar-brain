@@ -1,6 +1,5 @@
 export async function callOpenAI(userAnswer) {
-    // this is for a button 
-
+    
     try {
         const response = await fetch("/api/generate", {
             method: "POST",

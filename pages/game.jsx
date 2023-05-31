@@ -1,12 +1,10 @@
 import { useState, useMemo } from 'react'
 import NameTag from '../components/name-tag'
 import SpeechBox from '../components/speech-box'
-// import PlayerDeck from '../components/player-response-slider'
-// import { gameState } from '../utils/useStore'
-// import AnswerForm from '../components/answer-form'
 import { callOpenAI } from '../utils/callOpenAI'
 import RouterButton from '../components/router-button'
 import { useStore } from '../utils/useStore'
+import { SpeechBoxCallFunction } from '../utils/game'
 // function BearCounter() {
 //     const bears = useStore((state) => state.bears)
 //     return <h1>{bears} around here...</h1>
@@ -18,10 +16,10 @@ import { useStore } from '../utils/useStore'
     // func to evaluate which question to ask, and when to move to new q
         // looks at textComplete and isAnswered to update state
     // func to update games State
-    const GAME_STATES = {
-        intro: 'intro',
+    // const GAME_STATES = {
+    //     intro: 'intro',
 
-    }
+    // }
 
 export default function Game() {
     // const [gameStates, setGameStates] = useState(useStore((state) => state.gameStates))
@@ -34,17 +32,9 @@ export default function Game() {
     const [gameState, setGameState] = useState(gameStates.intro)
     const [userAnswer, setUserAnswer] = useState("")
     const [result, setResult] = useState()
-    console.log({gameStates})
-    console.log({gameState})
-    console.log({gamePlace})
-    const updateTextCompleted = (place) => {
-        useStore.setState((state, place) => 
-            ({...state, 
-                place: { ...state.place, textCompleted: true }
-            })
-        )
-        setGameState(gameStates.place)
-    }
+
+    const updateTextCompleted = useStore((state) => state.updateTextCompleted)
+
     const onAnswerSubmit = (event) => {
         event.preventDefault()
         callOpenAI(userAnswer)
@@ -53,7 +43,7 @@ export default function Game() {
     return (
         <div>
             <NameTag>Alloy Jones</NameTag>
-            <SpeechBox callFunction={() => updateTextCompleted(intro)}>
+            <SpeechBox callFunction={() => SpeechBoxCallFunction()}>
                 {gameState && gameState.hostText}
             </SpeechBox>
             <NameTag>Player</NameTag>
